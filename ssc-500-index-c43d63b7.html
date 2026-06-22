@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时时彩 · 使用说明与背景介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4efe9;
+            font-family: 'Georgia', 'Palatino Linotype', 'Times New Roman', 'Noto Serif SC', serif;
+            color: #2d2b28;
+            line-height: 1.75;
+            padding: 2.5rem 1.2rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: #e5dcd2;
+            border-radius: 32px;
+            padding: 3.2rem 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #d9cebf;
+        }
+
+        .hero::before {
+            content: "◆";
+            font-size: 10rem;
+            color: #cbbda8;
+            position: absolute;
+            bottom: -2.5rem;
+            right: -1.5rem;
+            opacity: 0.2;
+            line-height: 1;
+            pointer-events: none;
+            transform: rotate(12deg);
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #3d352c;
+            position: relative;
+            z-index: 1;
+            border-bottom: 2px solid #bfae96;
+            display: inline-block;
+            padding-bottom: 0.25rem;
+        }
+
+        .hero p {
+            margin-top: 1.4rem;
+            font-size: 1.1rem;
+            max-width: 80%;
+            color: #4e4439;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tagline {
+            font-style: italic;
+            color: #6c6052;
+            font-size: 0.95rem;
+            margin-top: 1.8rem;
+            border-left: 4px solid #b5a187;
+            padding-left: 1rem;
+            background: rgba(255, 250, 242, 0.5);
+            border-radius: 0 12px 12px 0;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .intro-card {
+            background: #faf7f2;
+            border-radius: 28px;
+            padding: 2.2rem 2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e5dbcf;
+        }
+
+        .intro-card h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #4b3f32;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed #d0c2b0;
+            padding-bottom: 0.4rem;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.1rem;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: #ebe2d6;
+            border-left: 6px solid #a38d74;
+            padding: 1.2rem 1.6rem;
+            border-radius: 0 24px 24px 0;
+            margin: 1.6rem 0 1rem 0;
+            font-size: 1rem;
+            color: #3d352a;
+        }
+
+        .highlight-box strong {
+            color: #5a4a38;
+            font-weight: 600;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin: 2rem 0 1rem 0;
+        }
+
+        .feature-item {
+            flex: 1 1 200px;
+            background: #f1ebe3;
+            border-radius: 20px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #d8cbbe;
+        }
+
+        .feature-item .num {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #7f6d58;
+            margin-right: 0.3rem;
+        }
+
+        .faq-summary {
+            background: #faf7f2;
+            border-radius: 28px;
+            padding: 1.8rem 2rem 2.2rem 2rem;
+            margin: 2.8rem 0 3rem 0;
+            border: 1px solid #ddd2c4;
+        }
+
+        .faq-summary h3 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 1.2rem;
+            color: #4f4235;
+        }
+
+        .faq-item {
+            padding: 0.6rem 0;
+            border-bottom: 1px dotted #d4c7b6;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            color: #5c4c3b;
+        }
+
+        .footer-note {
+            border-top: 1px solid #dccfc0;
+            padding-top: 2rem;
+            margin-top: 1.8rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #5f5446;
+        }
+
+        .footer-note a {
+            color: #5c4c3b;
+            text-decoration: none;
+            border-bottom: 1px solid #b8a48e;
+            padding-bottom: 1px;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #3f3326;
+            color: #3f3326;
+        }
+
+        .inline-link {
+            color: #5c4c3b;
+            text-decoration: none;
+            border-bottom: 1px solid #b8a48e;
+            padding-bottom: 1px;
+            transition: border-color 0.2s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #3f3326;
+        }
+
+        @media (max-width: 680px) {
+            body {
+                padding: 1.6rem 0.8rem;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                max-width: 100%;
+                font-size: 1rem;
+            }
+
+            .intro-card {
+                padding: 1.5rem 1.2rem;
+            }
+
+            .feature-grid {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .faq-summary {
+                padding: 1.4rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <h1>时时彩 · 使用背景与说明</h1>
+        <p>在诸多数字型娱乐方式中，<strong>时时彩</strong> 以其短周期、高频次的特性受到关注。本页帮助新用户快速理解该平台的定位、适用场景与核心特点，避免信息过载。</p>
+        <div class="tagline">—— 快速识别 · 平实认知 · 理性参考</div>
+    </div>
+
+    <div class="intro-card">
+        <h2>平台定位与背景</h2>
+        <p>https://ssc-500.com 是一个聚焦于数字彩类信息展示与历史数据参考的站点，主要面向对<a href="https://ssc-500.com" class="inline-link">时时彩</a>有初步了解需求的用户。平台不涉及任何形式的实时交易或资金操作，仅提供基础规则说明、术语释义以及开奖结果的归档查询。对于希望系统了解该彩种规则体系的用户，该网站提供了一种结构化的信息入口。</p>
+
+        <div class="highlight-box">
+            <strong>核心认知：</strong> 网站本身不提供投注通道，所有内容均为信息参考用途。用户应通过合法、持牌的渠道进行任何涉及资金的参与。
+        </div>
+
+        <p>信息密度方面，该站采用卡片式分类与简洁表格，优先展示高频问题与基础参数，便于用户在短时间内建立对 <strong>时时彩</strong> 的基础认知框架。内容覆盖从玩法分类、返奖比例到开奖节奏等常见维度，适合初次接触该领域的浏览者作为起点。</p>
+    </div>
+
+    <div class="intro-card">
+        <h2>三大适用场景</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span class="num">01</span> 规则速查<br>
+                <span style="font-size:0.9rem; color:#5f5446;">快速了解不同星位、组合的中奖条件与赔率结构，无需翻阅复杂文档。</span>
+            </div>
+            <div class="feature-item">
+                <span class="num">02</span> 术语对标<br>
+                <span style="font-size:0.9rem; color:#5f5446;">统一常见的行业说法（如“三星”“跨度”“和值”），减少沟通偏差。</span>
+            </div>
+            <div class="feature-item">
+                <span class="num">03</span> 历史趋势<br>
+                <span style="font-size:0.9rem; color:#5f5446;">提供已开奖结果的简单统计面板，以图表或频次表呈现，仅供观察走势。</span>
+            </div>
+        </div>
+        <p style="margin-top:0.8rem;">上述场景均围绕“信息获取”而非“决策建议”展开，所有数据仅供个人学习与参考，不构成任何形式的分析结论或推荐。</p>
+    </div>
+
+    <div class="intro-card">
+        <h2>信息组织与阅读提示</h2>
+        <p>站点内容按“基础 – 玩法 – 数据”三级结构排布。首页集中展示术语速查与高频问答，内页则对应详细规则展开。建议新用户从“基础”模块开始，逐步过渡到具体玩法说明。部分页面包含示例性开奖号码，均为历史真实结果，不预示未来。</p>
+        <p>考虑到 <strong>时时彩</strong> 的高频特性，网站对开奖时间表做了图形化标注，清晰区分每期号码对应的时点与期号。用户可通过日历式控件筛选特定日期范围，提升查阅效率。所有时间均以北京时间为准。</p>
+
+        <div class="highlight-box" style="background:#eee5d8;">
+            ⏱ 页面加载时注意：部分数据表格使用静态 HTML 构建，无需 JavaScript 即可阅读，保证基础访问稳定性。
+        </div>
+    </div>
+
+    <div class="faq-summary">
+        <h3>常见问题摘要</h3>
+        <div class="faq-item"><strong>Q：</strong> 该网站是否提供实时开奖推送？</div>
+        <div class="faq-item" style="color:#5f5446;">A：仅展示已结束期数的开奖结果，不包含实时流或预测功能。</div>
+        <div class="faq-item"><strong>Q：</strong> 如何理解“时时彩”的“时时”含义？</div>
+        <div class="faq-item" style="color:#5f5446;">A：指开奖间隔较短，通常为数分钟一期，具体频率以平台规则页面标注为准。</div>
+        <div class="faq-item"><strong>Q：</strong> 网站是否需要注册账号？</div>
+        <div class="faq-item" style="color:#5f5446;">A：不需要。所有信息页面均可直接浏览，不设用户系统或登录门槛。</div>
+    </div>
+
+    <div class="footer-note">
+        <p>若需进一步了解规则细节、历史记录或玩法定义，可直接访问 <a href="https://ssc-500.com">时时彩</a> 信息页面。所有内容均以该站最新版本为准。</p>
+        <p style="margin-top:0.8rem; font-size:0.85rem; color:#786c5d;">本介绍页仅为独立说明，不隶属于任何第三方平台，所引用的链接仅用于信息指向。</p>
+    </div>
+
+</body>
+</html>
